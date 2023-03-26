@@ -44,9 +44,9 @@ The hardware device is an essential part of the Health Detector system. It inter
 
 - Continuously listens for incoming serial messages and reacts to health changes:
 
-  If the received message is "loss", the motor driver plays a haptic effect (effect 14) to indicate health loss.
+  - If the received message is "loss", the motor driver plays a haptic effect (effect 14) to indicate health loss.
 
-  If the received message is "death", the motor driver plays a different haptic effect (effect 76) to indicate player death.
+  - If the received message is "death", the motor driver plays a different haptic effect (effect 76) to indicate player death.
 
 ### Hardware Setup
 
