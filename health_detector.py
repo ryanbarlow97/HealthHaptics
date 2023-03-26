@@ -3,7 +3,6 @@ import pytesseract
 from mss import mss
 import cv2
 
-
 class HealthDetector:
     def __init__(self, serial_connector):
         self.overwatch_health_area = {'top': 885, 'left': 145, 'width': 85, 'height': 48}
