@@ -1,5 +1,5 @@
 # Health Detector
-A simple and fancy GUI-based health detector program that interfaces with a hardware device to monitor a user's health in the popular game Overwatch. The program detects the health status and sends the relevant information to the connected hardware device.
+A simple and fancy GUI-based health detector program that interfaces with a hardware device to monitor a user's health in FPS games (with text health). The program detects the health status and sends the relevant information to the connected hardware device.
 
 # Files Overview
 
