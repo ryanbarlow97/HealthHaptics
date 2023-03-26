@@ -9,3 +9,13 @@ health_detector.py - Contains the HealthDetector class, which is responsible for
 
 serial_connector.py - Contains the SerialConnector class, which handles the communication with the hardware device using serial communication.
 
+# Usage
+
+Ensure that the required dependencies are installed: dearpygui, numpy, pytesseract, mss, cv2, adafruit_board_toolkit, and serial.
+Connect the hardware device to your computer.
+
+Run gui.py to start the GUI, and the program will automatically detect and connect to the hardware device.
+
+The GUI will display the current health status, and the hardware device will react to health changes as the user plays the game.
+
+If the hardware device is not connected or recognized, click the "Retry" button to attempt reconnection.
