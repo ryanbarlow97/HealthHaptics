@@ -19,3 +19,14 @@ Run gui.py to start the GUI, and the program will automatically detect and conne
 The GUI will display the current health status, and the hardware device will react to health changes as the user plays the game.
 
 If the hardware device is not connected or recognized, click the "Retry" button to attempt reconnection.
+
+
+# Health Detector Hardware
+
+The hardware device is an essential part of the Health Detector system. It interacts with the GUI program to receive and process health status updates from the game, providing feedback to the user in the form of haptic effects.
+
+# Hardware Components
+
+QT Py ESP32-S2 WiFi Dev Board.
+
+Adafruit DRV2605L Haptic Motor.
