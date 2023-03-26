@@ -44,3 +44,14 @@ Continuously listens for incoming serial messages and reacts to the health chang
 If the received message is "loss", the motor driver plays a haptic effect (effect 14) to indicate health loss.
 
 If the received message is "death", the motor driver plays a different haptic effect (effect 76) to indicate player death.
+
+# Hardware Setup
+
+Connect the DRV2605 Haptic Feedback Motor Driver to the board using the I2C bus.
+
+Upload the code.py to the board.
+
+Connect the board to your computer.
+
+Run the GUI program on your computer, and the hardware device should automatically connect and respond to health changes in the game.
+
