@@ -31,6 +31,10 @@ QT Py ESP32-S2 WiFi Dev Board.
 
 Adafruit DRV2605L Haptic Motor.
 
+Vibrating Mini Motor Disc
+
+STEMMA QT / Qwiic JST SH 4-Pin Cable
+
 # Hardware Code (code.py)
 
 Initializes the NeoPixel LED and configures it to show a green color when waiting for input.
