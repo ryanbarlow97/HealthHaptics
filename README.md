@@ -12,7 +12,8 @@ A simple and fancy GUI-based health detector program that interfaces with a hard
 ## Usage
 
 - Ensure that the required dependencies are installed: dearpygui, numpy, pytesseract, mss, cv2, adafruit_board_toolkit, and serial.
-Connect the hardware device to your computer.
+
+- Connect the hardware device to your computer.
 
 - Run gui.py to start the GUI, and the program will automatically detect and connect to the hardware device.
 
@@ -37,15 +38,15 @@ The hardware device is an essential part of the Health Detector system. It inter
 
 ### Hardware Code (code.py)
 
-- Initializes the NeoPixel LED and configures it to show a green color when waiting for input.
+- Initializes the NeoPixel LED and configures it to show a green colour when waiting for input.
 
 - Sets up the I2C bus and the DRV2605 Haptic Feedback Motor Driver.
 
-- Continuously listens for incoming serial messages and reacts to the health changes:
+- Continuously listens for incoming serial messages and reacts to health changes:
 
-- If the received message is "loss", the motor driver plays a haptic effect (effect 14) to indicate health loss.
+-- If the received message is "loss", the motor driver plays a haptic effect (effect 14) to indicate health loss.
 
-- If the received message is "death", the motor driver plays a different haptic effect (effect 76) to indicate player death.
+-- If the received message is "death", the motor driver plays a different haptic effect (effect 76) to indicate player death.
 
 ### Hardware Setup
 
