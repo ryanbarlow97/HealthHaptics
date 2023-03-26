@@ -30,3 +30,17 @@ The hardware device is an essential part of the Health Detector system. It inter
 QT Py ESP32-S2 WiFi Dev Board.
 
 Adafruit DRV2605L Haptic Motor.
+
+# Hardware Code
+
+code.py is responsible for managing the hardware components:
+
+Initializes the NeoPixel LED and configures it to show a green color when waiting for input.
+
+Sets up the I2C bus and the DRV2605 Haptic Feedback Motor Driver.
+
+Continuously listens for incoming serial messages and reacts to the health changes:
+
+If the received message is "loss", the motor driver plays a haptic effect (effect 14) to indicate health loss.
+
+If the received message is "death", the motor driver plays a different haptic effect (effect 76) to indicate player death.
