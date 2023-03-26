@@ -31,9 +31,7 @@ QT Py ESP32-S2 WiFi Dev Board.
 
 Adafruit DRV2605L Haptic Motor.
 
-# Hardware Code
-
-code.py is responsible for managing the hardware components:
+# Hardware Code (code.py)
 
 Initializes the NeoPixel LED and configures it to show a green color when waiting for input.
 
