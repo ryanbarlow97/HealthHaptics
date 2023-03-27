@@ -6,7 +6,7 @@ import cv2
 class HealthDetector:
     def __init__(self, serial_connector):
         self.overwatch_health_area = {'top': 885, 'left': 150, 'width': 85, 'height': 48}
-        self.rust_health_area = {'top': 100, 'left': 100, 'width': 100, 'height': 100}  # Example values
+        self.rust_health_area = {'top': 970, 'left': 1705, 'width': 40, 'height': 20}  # Example values
         self.fortnite_health_area = {'top': 200, 'left': 200, 'width': 200, 'height': 200}  # Example values
         self.csgo_health_area = {'top': 300, 'left': 300, 'width': 300, 'height': 300}  # Example values
 
@@ -37,9 +37,18 @@ class HealthDetector:
         if self.haptics_enabled:
             sct = mss()
             img = numpy.asarray(sct.grab(self.selected_game_area))
-            __, screen = cv2.threshold(img, 240, 255, cv2.THRESH_BINARY)
-            cv2.imshow("debug", screen)
-            text = pytesseract.image_to_string(screen, config='--psm 6')
+            if self.selected_game_area == self.rust_health_area:
+                img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+                __, screen = cv2.threshold(img_gray, 200, 255, cv2.THRESH_BINARY)
+
+                text = pytesseract.image_to_string(screen, config='--psm 6')
+                #cv2.imshow("debug", screen)
+
+            else:
+                __, screen = cv2.threshold(img, 240, 255, cv2.THRESH_BINARY)
+                text = pytesseract.image_to_string(screen, config='--psm 6') 
+                #cv2.imshow("debug", screen)
+                
             words = text.split()
             if words and words[0].isdigit():
                 self.current_health = int(words[0])
