@@ -51,9 +51,9 @@ The hardware device is an essential part of the Health Detector system. It inter
 
 - Connect the DRV2605 Haptic Feedback Motor Driver to the board using the I2C bus.
 
-- Upload the code.py to the board.
-
 - Connect the board to your computer.
+
+- Upload the code.py to the board.
 
 - Run the GUI program on your computer, and the hardware device should automatically connect and respond to health changes in the game.
 
