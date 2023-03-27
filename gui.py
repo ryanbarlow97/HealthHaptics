@@ -15,7 +15,7 @@ class GUI:
 
         dpg.create_context()
 
-        with dpg.window(tag="Health Haptics") as window:
+        with dpg.window(tag="Health Haptics"):
             with dpg.group(horizontal=True):
                 dpg.add_text("Status:") # The status label
                 dpg.add_text("Connected", tag="connect_status") # The status text
@@ -28,7 +28,7 @@ class GUI:
 
             dpg.add_combo(label="", tag="game_selector", show=self.serial_connected, items=["Please Select a Game", "Overwatch", "Rust", "Fortnite", "Counter Strike: GO"], default_value="Please Select a Game", callback=self.game_selected)
             dpg.set_item_pos("game_selector", [200, 10]) # Set the position of the game selector
-
+            
             if self.serial_connected:
                 dpg.set_value("connect_status", value="Connected") # Set the status to connected
                 dpg.configure_item("health_text", show=True) # Show the health text when connected
@@ -77,4 +77,3 @@ class GUI:
 
     def haptics_callback(self):
         health_detector.haptics_enabled = dpg.get_value("haptics_checkbox") 
-
