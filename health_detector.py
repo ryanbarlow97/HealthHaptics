@@ -6,7 +6,7 @@ import cv2
 class HealthDetector:
     def __init__(self, serial_connector):
         self.overwatch_health_area = {'top': 885, 'left': 150, 'width': 85, 'height': 48}
-        self.rust_health_area = {'top': 970, 'left': 1705, 'width': 40, 'height': 20}  # Example values
+        self.rust_health_area = {'top': 970, 'left': 1705, 'width': 40, 'height': 20}
         self.fortnite_health_area = {'top': 200, 'left': 200, 'width': 200, 'height': 200}  # Example values
         self.csgo_health_area = {'top': 300, 'left': 300, 'width': 300, 'height': 300}  # Example values
 
