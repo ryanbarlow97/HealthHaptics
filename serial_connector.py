@@ -25,7 +25,7 @@ class SerialConnector:
 
     def disconnect(self):
         if self.connected:
-            self.serial .close()
+            self.serial.close()
 
     def detect_ports(self):
         try:
