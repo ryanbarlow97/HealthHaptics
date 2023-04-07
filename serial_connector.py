@@ -1,7 +1,6 @@
 import adafruit_board_toolkit.circuitpython_serial
 import serial
 
-
 class SerialConnector:
     def __init__(self, port, baudrate):
         self.port = port
@@ -35,7 +34,6 @@ class SerialConnector:
         except:
             pass
         return None
-
 
     def write(self, message):
         if self.serial and self.serial.is_open:
