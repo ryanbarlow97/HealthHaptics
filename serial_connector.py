@@ -13,7 +13,6 @@ class SerialConnector:
             self.port = self.detect_ports()
         if self.port is None:
             return False
-
         try:
             self.serial  = serial.Serial(self.port, self.baudrate)
         except:
