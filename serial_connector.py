@@ -37,4 +37,3 @@ class SerialConnector:
     def write(self, message):
         if self.serial and self.serial.is_open:
             self.serial.write(message)
-            #print(message)
