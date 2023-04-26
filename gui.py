@@ -3,9 +3,9 @@ from health_detector import HealthDetector
 from serial_connector import SerialConnector
 
 # Create an instance of SerialConnector
-serial_connector = SerialConnector(None, 115200) # Set the serial port to None, and the baud rate to 115200
+serial_connector = SerialConnector(None, 230400) # Set the serial port to None, and the baud rate to 115200
 serial_connected = serial_connector.connect() # Connect to the serial port
-
+    
 # Create an instance of HealthDetector, passing in the SerialConnector instance (to write when health changes)
 health_detector = HealthDetector(serial_connector)
 
