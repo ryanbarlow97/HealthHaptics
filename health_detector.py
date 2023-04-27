@@ -71,7 +71,7 @@ class HealthDetector:
                 text = pytesseract.image_to_string(screen, config='--psm 6 -c tessedit_char_whitelist=0123456789')
                 
                 #print(text)
-                cv2.imshow("debug", screen)              
+                #cv2.imshow("debug", screen)              
                 
             elif self.selected_game_area == self.fortnite_health_areahp:
                 armorValue = np.asarray(sct.grab(self.fortnite_health_areashield))
