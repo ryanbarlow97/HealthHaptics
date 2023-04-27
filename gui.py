@@ -3,7 +3,7 @@ from health_detector import HealthDetector
 from serial_connector import SerialConnector
 
 # Create an instance of SerialConnector
-serial_connector = SerialConnector(None, 230400) # Set the serial port to None, and the baud rate to 115200
+serial_connector = SerialConnector(None, 230400) # Set the serial port to None, and the baud rate to 230400
 serial_connected = serial_connector.connect() # Connect to the serial port
     
 # Create an instance of HealthDetector, passing in the SerialConnector instance (to write when health changes)
@@ -29,14 +29,14 @@ class GUI:
             dpg.add_combo(label="", tag="game_selector", show=self.serial_connected, items=["Please Select a Game", "Overwatch", "Rust", "Fortnite", "Counter Strike: GO"], default_value="Please Select a Game", callback=self.game_selected)
             dpg.set_item_pos("game_selector", [200, 10]) # Set the position of the game selector
             
-            if self.serial_connected:
-                dpg.set_value("connect_status", value="Connected") # Set the status to connected
-                dpg.configure_item("health_text", show=True) # Show the health text when connected
-                dpg.configure_item("health_label", show=True) # Show the health label when connected
+            if self.serial_connected: #When connected:
+                dpg.set_value("connect_status", value="Connected") # Set the status
+                dpg.configure_item("health_text", show=True) # Show the health text
+                dpg.configure_item("health_label", show=True) # Show the health label 
 
-            else:
-                dpg.configure_item("retry_button", show=True, label="Retry") # Show the retry button when not connected
-                dpg.set_value("connect_status", value="Not connected. Please plug in the board.") # Set the status to connected
+            else: #When not connected:
+                dpg.configure_item("retry_button", show=True, label="Retry") # Show the retry button
+                dpg.set_value("connect_status", value="Not connected. Please plug in the board.") # Set the status
 
         dpg.create_viewport(title='Health Haptics', width=400, height=200, resizable=False, max_height=200, max_width=400)
         dpg.setup_dearpygui()  
@@ -65,13 +65,14 @@ class GUI:
     def retry_callback(self):
         if not self.serial_connected:
             self.serial_connected = serial_connector.connect() # Try to connect to the serial port
-        if self.serial_connected:
-            dpg.set_value("connect_status", value="Connected") # Set the status to connected
-            dpg.configure_item("retry_button", show=False) # Hide the retry button when connected
-            dpg.configure_item("health_text", show=True) # Show the health text when connected
-            dpg.configure_item("health_label", show=True) # Show the health label when connected
-            dpg.configure_item("haptics_checkbox", show=True)  # Show the checkbox when connected
-            dpg.configure_item("game_selector", show=True)  # Show the game selector when connected
+            
+        if self.serial_connected: #When connected, do the following:
+            dpg.set_value("connect_status", value="Connected") # Set the status
+            dpg.configure_item("retry_button", show=False) # Hide the retry button
+            dpg.configure_item("health_text", show=True) # Show the health text
+            dpg.configure_item("health_label", show=True) # Show the health label
+            dpg.configure_item("haptics_checkbox", show=True)  # Show the checkbox
+            dpg.configure_item("game_selector", show=True)  # Show the game selector
         else:
             dpg.configure_item("retry_button", show=True, label="Retry (Failed)") # Show the retry button when not connected
 
