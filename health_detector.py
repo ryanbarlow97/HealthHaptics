@@ -58,7 +58,7 @@ class HealthDetector:
 
                 screen = cv2.inRange(img_gray_expanded, lower_white, upper_white)
                 text = pytesseract.image_to_string(screen, config='--psm 6 -c tessedit_char_whitelist=0123456789')
-                cv2.imshow("debug", screen)
+                #cv2.imshow("debug", screen)
                 
             elif self.selected_game_area == self.csgo_health_area:
                 
