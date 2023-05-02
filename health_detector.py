@@ -51,14 +51,14 @@ class HealthDetector:
                 
             elif self.selected_game_area == self.overwatch_health_area:
                 
-                lower_white = np.array([255, 255, 255])
+                lower_white = np.array([240, 240, 240])
                 upper_white = np.array([255, 255, 255])
                 img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
                 img_gray_expanded = cv2.cvtColor(img_gray, cv2.COLOR_GRAY2BGR)
 
                 screen = cv2.inRange(img_gray_expanded, lower_white, upper_white)
                 text = pytesseract.image_to_string(screen, config='--psm 6 -c tessedit_char_whitelist=0123456789')
-                #cv2.imshow("debug", screen)
+                cv2.imshow("debug", screen)
                 
             elif self.selected_game_area == self.csgo_health_area:
                 
